@@ -4,7 +4,7 @@ import SkillDataProvider from "./skillsDataProvider";
 export default function Skills() {
   return (
     <>
-      <div className="flex flex-wrap items-center justify-center gap-5 bg-zinc-400 py-10">
+      <div className="flex flex-wrap md:grid grid-cols-6 w-full items-center justify-center justify-items-center gap-5 bg-zinc-400 py-10">
         {Skill_data.map((image, index) => (
           <SkillDataProvider
             key={index}
