@@ -7,8 +7,8 @@ export const TechSkills_Data = [
   { name: "Python", level: 3 },
   { name: "Next.js", level: 3 },
   { name: "TypeScript", level: 3 },
+  { name: "Angular", level: 3 },
   { name: "Java", level: 2 },
-  { name: "Angular", level: 2 },
   { name: "MySQL", level: 2 },
   { name: "PostgreSQL", level: 1 },
 ];

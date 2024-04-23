@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -26,6 +27,27 @@ export default function SkillDataProvider({
 
   const animationDelay = 0.5;
 
+  const [maxWidth, setMaxWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 768) {
+        setMaxWidth(100);
+      } else {
+        setMaxWidth(null);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <motion.div
       ref={ref}
@@ -40,6 +62,7 @@ export default function SkillDataProvider({
         width={width}
         height={height}
         alt={`Skill ${index + 1}`}
+        style={{ maxWidth: maxWidth !== null ? `${maxWidth}px` : "none" }}
       />
       {progress > 0 && (
         <div className="absolute inset-0 bg-gray-200 rounded-full h-2">

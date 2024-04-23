@@ -1,6 +1,7 @@
 import { FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import BgContact from "../../assets/img/bgContact.jpg";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const whatsappLink = "https://api.whatsapp.com/send?phone=5581986735670";
@@ -30,30 +31,38 @@ export default function Contact() {
                 Sinta-se a vontade, eu terei o prazer em responder!
               </p>
               <ul className="flex justify-between items-center w-full">
-                <li
+                <motion.li
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   className="flex items-center justify-center gap-3 cursor-pointer w-8 h-8"
                   onClick={() => handleClick(whatsappLink)}
                 >
                   <FaWhatsapp className="w-full h-full" />
-                </li>
-                <li
+                </motion.li>
+                <motion.li
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   className="flex items-center justify-center gap-3 cursor-pointer w-8 h-8"
                   onClick={() => handleClick(linkedinLink)}
                 >
                   <FaLinkedin className="w-full h-full" />
-                </li>
-                <li
+                </motion.li>
+                <motion.li
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   className="flex items-center justify-center gap-3 cursor-pointer w-8 h-8"
                   onClick={() => handleClick(instagramLink)}
                 >
                   <FaInstagram className="w-full h-full" />
-                </li>
-                <li
+                </motion.li>
+                <motion.li
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   className="flex items-center justify-center gap-3 cursor-pointer w-8 h-8"
                   onClick={() => handleClick(emailLink)}
                 >
                   <MdEmail className="w-full h-full" />
-                </li>
+                </motion.li>
               </ul>
             </div>
           </div>

@@ -29,22 +29,22 @@ export default function Navbar() {
               alt="logo"
               className="rounded-full bg-zinc-300 w-[50px] h-[50px]"
             />
-            <span className="tracking-wider lg:text-xl font-bold duration-300 hover:text-[#0572BA] cursor-pointer">
+            <span className="tracking-wider lg:text-xl font-bold duration-300 hover:text-[#013440] cursor-pointer">
               WALLYSON ARAUJO
             </span>
           </div>
           <div className="hidden lg:flex">
             <ul className="flex gap-5 text-lg">
-              <li className="duration-300 hover:text-[#0572BA] cursor-pointer hover:border-b hover:border-[#0572BA]">
+              <li className="duration-300 hover:text-[#013440] cursor-pointer hover:border-b hover:border-[#013440]">
                 HOME
               </li>
-              <li className="duration-300 hover:text-[#0572BA] cursor-pointer hover:border-b hover:border-[#0572BA]">
+              <li className="duration-300 hover:text-[#013440] cursor-pointer hover:border-b hover:border-[#013440]">
                 SOBRE
               </li>
-              <li className="duration-300 hover:text-[#0572BA] cursor-pointer hover:border-b hover:border-[#0572BA]">
+              <li className="duration-300 hover:text-[#013440] cursor-pointer hover:border-b hover:border-[#013440]">
                 PROJETOS
               </li>
-              <li className="duration-300 hover:text-[#0572BA] cursor-pointer hover:border-b hover:border-[#0572BA]">
+              <li className="duration-300 hover:text-[#013440] cursor-pointer hover:border-b hover:border-[#013440]">
                 CONTATO
               </li>
             </ul>

@@ -28,7 +28,7 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row w-full items-center justify-evenly lg:justify-around bg-black backdrop-blur-sm backdrop-filter bg-opacity-50 p-10 h-screen">
           <div className="flex flex-col items-start justify-center text-[#E0E4E7] gap-5">
             <motion.h1
-              className="text-5xl lg:text-7xl"
+              className="text-5xl md:text-7xl"
               ref={ref}
               initial="hidden"
               variants={imageVariants}
