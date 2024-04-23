@@ -6,10 +6,10 @@ import Projects from "../components/projects/projects";
 export default function PaginaHome() {
   return (
     <>
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
+      <Home sectionId="home" />
+      <About sectionId="about" />
+      <Projects sectionId="projects" />
+      <Contact sectionId="contact" />
     </>
   );
 }

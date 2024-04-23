@@ -3,7 +3,11 @@ import Skills from "../skills/skills";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export default function Home() {
+interface HomeProps {
+  sectionId: string;
+}
+
+export default function Home(props: HomeProps) {
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
@@ -22,6 +26,7 @@ export default function Home() {
   return (
     <>
       <div
+        id={props.sectionId}
         className="flex justify-around items-center w-full min-h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${BgHome})` }}
       >
@@ -43,8 +48,8 @@ export default function Home() {
               variants={imageVariants}
               animate={inView ? "visible" : "hidden"}
             >
-              Especializado em React.js, JavaScript, HTML, CSS,
-              Tailwind CSS e Python
+              Especializado em React.js, JavaScript, HTML, CSS, Tailwind CSS e
+              Python
             </motion.p>
           </div>
           <div>

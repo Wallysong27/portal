@@ -5,7 +5,11 @@ import Wally from "../../assets/img/perfil.jpg";
 import AboutMobile from "./aboutMobile";
 import TechSkills from "../techskills/techSkills";
 
-export default function About() {
+interface AboutProps {
+  sectionId: string;
+}
+
+export default function About(props: AboutProps) {
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
@@ -43,8 +47,8 @@ export default function About() {
   }, [divControls, isVisible]);
 
   return (
-    <>
-      <div className="flex flex-col items-center justify-start h-screen gap-10 md:pb-10 lg:py-20">
+    <div id={props.sectionId}>
+      <div className="flex flex-col items-center justify-start h-screen gap-10 md:pb-10 lg:py-20 pt-20">
         <div className="flex flex-col items-center justify-center gap-20">
           <motion.div
             className="bg-zinc-300 hidden lg:flex items-center border rounded-full"
@@ -69,8 +73,8 @@ export default function About() {
                   fontWeight: 600,
                 }}
               >
-                Olá, eu me chamo Wallyson e sou formado em ciência da
-                computação.
+                Olá, eu me chamo Wallyson, sou formado em ciência da computação
+                e sou Desenvolvedor Web.
               </motion.p>
             )}
           </motion.div>
@@ -78,6 +82,6 @@ export default function About() {
           <TechSkills />
         </div>
       </div>
-    </>
+    </div>
   );
 }

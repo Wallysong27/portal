@@ -3,7 +3,11 @@ import { MdEmail } from "react-icons/md";
 import BgContact from "../../assets/img/bgContact.jpg";
 import { motion } from "framer-motion";
 
-export default function Contact() {
+interface ContactProps {
+  sectionId: string;
+}
+
+export default function Contact(props: ContactProps) {
   const whatsappLink = "https://api.whatsapp.com/send?phone=5581986735670";
   const linkedinLink =
     "https://www.linkedin.com/in/wallyson-gabriel-66947b1b7/";
@@ -16,7 +20,7 @@ export default function Contact() {
 
   return (
     <>
-      <div>
+      <div id={props.sectionId}>
         <div
           className="relative flex justify-evenly items-center w-full min-h-screen bg-cover bg-center"
           style={{ backgroundImage: `url(${BgContact})` }}

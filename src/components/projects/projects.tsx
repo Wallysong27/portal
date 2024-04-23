@@ -5,7 +5,11 @@ import { useInView } from "react-intersection-observer";
 import BgCispe from "../../assets/img/projetos/bg-cispe.png";
 import BgDgmog from "../../assets/img/projetos/bg-dgmog.png";
 
-export default function Projects() {
+interface ProjectsProps {
+  sectionId: string;
+}
+
+export default function Projects(props: ProjectsProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -48,9 +52,9 @@ export default function Projects() {
   const animationDelay = 1;
 
   return (
-    <>
+    <div id={props.sectionId}>
       <motion.div
-        className="flex flex-col items-center justify-center md:justify-start py-10 px-4 gap-10 min-h-screen"
+        className="flex flex-col items-center justify-center md:justify-start pt-40 pb-20 px-4 gap-10 min-h-screen"
         ref={ref}
         initial="hidden"
         variants={imageVariants}
@@ -93,7 +97,7 @@ export default function Projects() {
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -50, opacity: 0 }}
-              className="bg-white w-[500px] h-[200px] rounded-3xl flex flex-col items-center justify-center relative"
+              className="bg-white w-10/12 md:w-1/2 h-[200px] rounded-3xl flex flex-col items-center justify-center relative"
             >
               <span
                 className="absolute top-4 right-4 cursor-pointer"
@@ -104,13 +108,13 @@ export default function Projects() {
               <h1 className="font-bold text-3xl text-[#013440]">
                 Portal DGMOG
               </h1>
-              <p className="text-lg font-semibold text-[#013440]">
+              <p className="text-lg font-semibold text-[#013440] text-center">
                 Este projeto ainda não foi finalizado. Por favor, aguarde.
               </p>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
