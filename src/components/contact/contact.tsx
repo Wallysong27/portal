@@ -1,6 +1,6 @@
 import { FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import Bg from "../../assets/img/bg.jpg";
+import BgContact from "../../assets/img/bgContact.jpg";
 
 export default function Contact() {
   const whatsappLink = "https://api.whatsapp.com/send?phone=5581986735670";
@@ -17,11 +17,11 @@ export default function Contact() {
     <>
       <div>
         <div
-          className="flex justify-evenly items-center w-full min-h-screen bg-cover bg-center"
-          style={{ backgroundImage: `url(${Bg})` }}
+          className="relative flex justify-evenly items-center w-full min-h-screen bg-cover bg-center"
+          style={{ backgroundImage: `url(${BgContact})` }}
         >
-          <div className="flex-1"></div>
-          <div className="flex items-center justify-center flex-1">
+          <div className="md:flex-1"></div>
+          <div className="flex items-center justify-center md:flex-1 p-5">
             <div className="flex flex-col items-start justify-center gap-5 bg-[#E0E4E7] text-[#013440] p-10 rounded-xl h-[500px]">
               <h1 className="text-5xl font-bold">Entre em Contato!</h1>
               <p>
@@ -57,38 +57,9 @@ export default function Contact() {
               </ul>
             </div>
           </div>
-          {/* <div className="flex flex-col gap-3">
-          <h1 className="text-lg md:text-5xl text-[#013440]">
-            Entre em contato!
-          </h1>
-          <p className="text-xs md:text-base text-[#E0E4E7]">
-            Tem alguma dúvida, proposta ou quer apenas mandar um oi?
-            <br /> Sinta-se a vontade, eu terei o prazer em responder!
-          </p>
-        </div>
-        <ul className="flex flex-col items-start justify-center text-[#E0E4E7]">
-          <li
-            className="flex items-center justify-center gap-2 cursor-pointer"
-            onClick={() => handleClick(whatsappLink)}
-          >
-            <FaWhatsapp />
-            WhatsApp
-          </li>
-          <li
-            className="flex items-center justify-center gap-2 cursor-pointer"
-            onClick={() => handleClick(linkedinLink)}
-          >
-            <CiLinkedin />
-            LinkedIn
-          </li>
-          <li
-            className="flex items-center justify-center gap-2 cursor-pointer"
-            onClick={() => handleClick(emailLink)}
-          >
-            <RiMailSendLine />
-            E-mail
-          </li>
-        </ul> */}
+          <div className="absolute bottom-0 w-full bg-black bg-opacity-50 backdrop-blur backdrop-filter py-4">
+            <p className="text-[#E0E4E7] text-center">© Wallyson Araújo 2024</p>
+          </div>
         </div>
       </div>
     </>

@@ -1,31 +1,47 @@
-import Cispe from "../../assets/img/cispe.png";
-// import ComingSoon from "../../assets/img/comingSoon.jpg";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+import BgCispe from "../../assets/img/projetos/bg-cispe.png";
+import BgDgmog from "../../assets/img/projetos/bg-dgmog.png";
 
 export default function Projects() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
+  const imageVariants = {
+    hidden: { y: 300, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.1,
+      },
+    },
+  };
+
+  const animationDelay = 1;
+
   return (
     <>
-      <div className="flex flex-col items-center justify-start py-10 px-4 gap-5">
-        <h1 className="text-4xl text-[#013440] font-bold">Projetos</h1>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-          <div className="bg-zinc-400 rounded-lg md:w-[700px]">
-            <img src={Cispe} alt="" className="rounded-t-lg w-full" />
-            <p className="p-4 text-justify text-[#E0E4E7]">
-              O Centro de Inteligência na Saúde de Pernambuco, ou somente CISPE,
-              é um projeto da Secretaria Estadual de Saúde e monitorado pela
-              DGMOG (Diretoria Geral de Monitoramento e Gestão Estratégica) que
-              visa integrar a tecnologia na saúde pública, entregar informações
-              estratégicas à população e temas relevantes à saúde no Estado.
-            </p>
+      <motion.div
+        className="flex flex-col items-center justify-center md:justify-start py-10 px-4 gap-10 min-h-screen"
+        ref={ref}
+        initial="hidden"
+        variants={imageVariants}
+        animate={inView ? "visible" : "hidden"}
+        transition={{ delay: animationDelay }}
+      >
+        <h1 className="text-4xl text-[#013440] font-bold">Meus projetos</h1>
+        <div className="flex gap-10">
+          <div>
+            <img src={BgCispe} alt="" />
           </div>
-          {/* <div className="bg-zinc-400 rounded-lg w-96">
-            <img src={ComingSoon} alt="" className="rounded-t-lg w-full" />
-            <p className="p-4 text-justify text-[#E0E4E7]">
-              Aguarde, em breve estarei inserindo os demais projetos já
-              finalizados!
-            </p>
-          </div> */}
+          <div>
+            <img src={BgDgmog} alt="" />
+          </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

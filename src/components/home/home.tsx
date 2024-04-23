@@ -1,31 +1,56 @@
-import Wallyson from "../../assets/img/wallyson.png";
+import BgHome from "../../assets/img/bg-home.jpg";
 import Skills from "../skills/skills";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
+  const imageVariants = {
+    hidden: { x: -300, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.1,
+      },
+    },
+  };
+
   return (
     <>
-      <div className="flex flex-col justify-center md:items-center h-screen bg-zinc-400 text-white">
-        <div className="flex flex-col md:flex-row items-center justify-around lg:justify-evenly w-full">
-          <div className="relative flex items-center justify-center flex-[65%] md:flex-none">
-            <div className="flex flex-col p-4">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#013440]">
-                Desenvolvedor <br />Front-End
-              </h1>
-              <p className="text-[#E0E4E7] font-semibold">
-                Especializado em React.js, TypeScript,<br /> JavaScript, HTML, CSS e
-                Tailwind CSS.
-              </p>
-            </div>
+      <div
+        className="flex justify-around items-center w-full min-h-screen bg-cover bg-center"
+        style={{ backgroundImage: `url(${BgHome})` }}
+      >
+        <div className="flex flex-col lg:flex-row w-full items-center justify-evenly lg:justify-around bg-black backdrop-blur-sm backdrop-filter bg-opacity-50 p-10 h-screen">
+          <div className="flex flex-col items-start justify-center text-[#E0E4E7] gap-5">
+            <motion.h1
+              className="text-5xl lg:text-7xl"
+              ref={ref}
+              initial="hidden"
+              variants={imageVariants}
+              animate={inView ? "visible" : "hidden"}
+            >
+              Desenvolvedor <br />
+              Web
+            </motion.h1>
+            <motion.p
+              ref={ref}
+              initial="hidden"
+              variants={imageVariants}
+              animate={inView ? "visible" : "hidden"}
+            >
+              Especializado em React.js, JavaScript, HTML, CSS,
+              Tailwind CSS e Python
+            </motion.p>
           </div>
-          <div className="flex-[35%] md:flex-none p-10 relative w-80">
-            {" "}
-            <div className="relative after:absolute after:w-full after:h-full after:top-4 after:left-4 after:outline outline-white z-10">
-              {" "}
-              <img src={Wallyson} alt="" className="relative z-20 w-full" />{" "}
-            </div>
+          <div>
+            <Skills />
           </div>
         </div>
-        <Skills />
       </div>
     </>
   );

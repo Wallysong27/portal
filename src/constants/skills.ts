@@ -13,6 +13,18 @@ import mysql from "../assets/img/mysql.png";
 
 export const Skill_data = [
   {
+    skillName: "React.js",
+    Image: react,
+    width: 50,
+    height: 50,
+  },
+  {
+    skillName: "JavaScript",
+    Image: javascript,
+    width: 50,
+    height: 50,
+  },
+  {
     skillName: "HTML",
     Image: html,
     width: 50,
@@ -25,20 +37,8 @@ export const Skill_data = [
     height: 50,
   },
   {
-    skillName: "JavaScript",
-    Image: javascript,
-    width: 50,
-    height: 50,
-  },
-  {
     skillName: "Next.js",
     Image: next,
-    width: 50,
-    height: 50,
-  },
-  {
-    skillName: "React.js",
-    Image: react,
     width: 50,
     height: 50,
   },
@@ -55,22 +55,22 @@ export const Skill_data = [
     height: 50,
   },
   {
-    skillName: "Material UI",
-    Image: mui,
-    width: 50,
-    height: 50,
-  },
-  {
     skillName: "Python",
     Image: python,
     width: 50,
     height: 50,
   },
   {
-    skillName: "Java",
-    Image: java,
+    skillName: "Material UI",
+    Image: mui,
     width: 50,
     height: 50,
+  },
+  {
+    skillName: "Java",
+    Image: java,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "Postgre SQL",

@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -26,7 +24,7 @@ export default function SkillDataProvider({
     visible: { opacity: 1 },
   };
 
-  const animationDelay = 0.3;
+  const animationDelay = 0.5;
 
   return (
     <motion.div

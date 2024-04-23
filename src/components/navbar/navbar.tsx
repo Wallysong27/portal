@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <>
       <nav>
-        <div className="w-full flex items-center justify-around lg:justify-between border-b shadow-lg py-2 lg:px-20 backdrop-filter backdrop-blur-3xl z-[10000] bg-black bg-opacity-50 text-[#E0E4E7] lg:py-5 px-6 xl:px-40 gap-10 2xl:gap-20">
+        <div className="fixed w-full flex items-center justify-around lg:justify-between border-b shadow-lg py-2 lg:px-20 backdrop-filter backdrop-blur-3xl z-[10000] bg-black bg-opacity-50 text-[#E0E4E7] lg:py-5 px-6 xl:px-40 gap-10 2xl:gap-20">
           <div className="flex items-center gap-3">
             <img
               src={Wallyson}
@@ -39,13 +39,13 @@ export default function Navbar() {
                 HOME
               </li>
               <li className="duration-300 hover:text-[#0572BA] cursor-pointer hover:border-b hover:border-[#0572BA]">
-                ABOUT ME
+                SOBRE
               </li>
               <li className="duration-300 hover:text-[#0572BA] cursor-pointer hover:border-b hover:border-[#0572BA]">
-                PROJECTS
+                PROJETOS
               </li>
               <li className="duration-300 hover:text-[#0572BA] cursor-pointer hover:border-b hover:border-[#0572BA]">
-                CONTACT
+                CONTATO
               </li>
             </ul>
           </div>
